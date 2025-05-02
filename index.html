@@ -13,6 +13,9 @@
     ul { list-style: none; padding-left: 0; }
     li { margin-bottom: 10px; }
     .tag { background: #0074D9; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 5px; font-size: 12px; }
+    .profile-photo { max-width: 150px; border-radius: 50%; margin-bottom: 10px; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
@@ -21,6 +24,17 @@
     <p>AI Engineer | M.Tech GeoInformatics, IIT Bombay</p>
     <p>Email: hamendrasingodiya@gmail.com | LinkedIn: <a href="https://www.linkedin.com/in/hamendra-saini-b22a54179" target="_blank" style="color: #FFD700">hamendra-saini</a></p>
   </header>
+
+  <section>
+    <h2>Profile</h2>
+    <img src="your-photo.jpg" alt="Hamendra Saini" class="profile-photo">
+    <p>Upload your photo as <strong>your-photo.jpg</strong> in the same directory as this HTML file.</p>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I am an AI Engineer passionate about building scalable NLP and GenAI applications, with strong academic and industrial experience in deep learning, large language models, and applied machine learning.</p>
+  </section>
 
   <section>
     <h2>Areas of Interest</h2>
@@ -51,6 +65,7 @@
       <li><strong>Glacier Melt-Pond Extraction (Thesis)</strong> - Satellite imagery classification using Random Forest on GEE</li>
       <li><strong>Semantic Similarity with BERT</strong> - Fine-tuned on SNLI corpus, achieved 86.26% accuracy</li>
       <li><strong>Customer Segmentation</strong> - PCA + KMeans for customer clustering using Elbow method</li>
+      <li><strong>Life Expectancy Prediction</strong> - Regression modeling using health, economic and demographic data</li>
     </ul>
   </section>
 
@@ -66,5 +81,19 @@
     <h2>Skills</h2>
     <p><span class="tag">Python</span> <span class="tag">SQL</span> <span class="tag">C++</span> <span class="tag">TensorFlow</span> <span class="tag">PyTorch</span> <span class="tag">Hugging Face</span> <span class="tag">Langchain</span> <span class="tag">Flask</span> <span class="tag">Streamlit</span> <span class="tag">Chainlit</span> <span class="tag">Azure ML Studio</span> <span class="tag">Power BI</span></p>
   </section>
+
+  <script>
+    // Scroll-triggered animation
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
