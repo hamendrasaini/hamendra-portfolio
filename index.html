@@ -134,6 +134,40 @@
       background-color: #ccc;
     }
 
+    .about-section {
+  background: transparent;
+  box-shadow: none;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-container img.profile-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-container p {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+    .about-container {
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-container p {
+  font-size: 16px;
+}
+
     .panel {
       padding: 0 18px;
       background-color: white;
@@ -157,6 +191,7 @@
         font-size: 24px;
       }
     }
+      
   </style>
 </head>
 <body>
@@ -175,11 +210,14 @@
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0');">Welcome to my portfolio</div>
   </header>
 
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
+  <section id="about" class="fade-in about-section">
+  <h2>About Me</h2>
+  <div class="about-container">
     <img src="your-photo.jpg" alt="Hamendra Saini" class="profile-photo">
     <p>I am an AI Engineer passionate about building scalable NLP and GenAI applications, with strong academic and industrial experience in deep learning, large language models, and applied machine learning.</p>
-  </section>
+  </div>
+</section>
+
 
   <section id="projects" class="fade-in">
     <h2 style="text-align:center">Projects</h2>
